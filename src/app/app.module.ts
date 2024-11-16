@@ -23,7 +23,7 @@ import { ShellModule } from './Core/shell/shell.module';
   bootstrap: [AppComponent],
   providers: [
     provideFirebaseApp(() => initializeApp({"projectId":"goodwatch-bbb68","appId":"1:234364042765:web:583422e557f3c42c8c1f44","storageBucket":"goodwatch-bbb68.firebasestorage.app","apiKey":"AIzaSyAlF4OyKm8BY6AF8kYqh7RGXIrvcHeauYk","authDomain":"goodwatch-bbb68.firebaseapp.com","messagingSenderId":"234364042765","measurementId":"G-JWSKX7BLF3"})),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
   ]
 })
 export class AppModule { }
