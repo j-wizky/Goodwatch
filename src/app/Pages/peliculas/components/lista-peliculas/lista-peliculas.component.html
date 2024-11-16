@@ -1,0 +1,46 @@
+<p-scrollPanel [style]="{ width: '100%', height: '94%' }">
+    <ng-template pTemplate="content">
+        <p-paginator [style]="{ width: '100%'}"
+        (onPageChange)="onPageChange($event)" 
+        [totalRecords]="totalPeliculas" 
+        [first]="first"
+        [rows] = "rows"
+    />
+        <div class="card-container">
+            <div *ngFor="let pelicula of peliculas!">
+                <p-card [subheader]="(pelicula.release_date | date:'dd-MM-yyyy')!">
+                    <ng-template pTemplate="header">
+                        <div class="image-container">
+                            <img alt="Card" [src]="'https://image.tmdb.org/t/p/w500' + pelicula.poster_path" />
+                        </div>
+                        <div class="p-card-header-content">
+                            <div class="text-container">
+                                <b>{{ pelicula.title }}</b>
+                            </div>
+                            <div class="tags-container">
+                                <ng-container *ngFor="let genero of pelicula.genre_ids">
+                                    <p-tag [value]="getNombreGenero(genero)" [rounded]="true" calss="ml-1 mr-1" />
+                                </ng-container>
+                            </div>
+
+                        </div>
+                    </ng-template>
+
+                    <ng-template pTemplate="footer">
+                        <div class="footer-container">
+                            <p-button label="Detalle" class="w-full" styleClass="button" />
+                            <p-knob [ngModel]="redondearValoracion(pelicula.vote_average)" [max]="10" size="60"/>
+                        </div>
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+        <p-paginator [style]="{ width: '100%'}"
+        (onPageChange)="onPageChange($event)" 
+        [totalRecords]="totalPeliculas" 
+        [first]="first"
+        [rows] = "rows"
+    />
+    </ng-template>
+    
+</p-scrollPanel>

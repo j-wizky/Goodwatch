@@ -1,0 +1,82 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%; /* Controla el espacio entre las cartas */
+    justify-content: space-between; /* Distribuye el espacio entre las cartas */
+    padding: 0 5%; /* Agrega un espacio de 5% a los lados del contenedor */
+}
+
+.card-container > div {
+    flex: 1 1 calc(20% - 5%); /* 20% de ancho para 5 elementos por fila menos el espacio entre ellos */
+    box-sizing: border-box;
+    margin-top: 5%; /* Margen superior entre las filas */
+    margin-bottom: 5%; /* Margen inferior entre las filas */
+}
+
+p-card {
+    width: 100%;
+    margin: 0; /* Asegura que no haya márgenes adicionales por defecto */
+}
+
+.image-container {
+    width: 100%; /* El contenedor ocupa todo el ancho disponible de la carta */
+    height: 25vw; /* Altura dinámica basada en el ancho de la ventana */
+    max-height: 300px; /* Altura máxima opcional para pantallas grandes */
+    overflow: hidden; /* Asegura que cualquier contenido fuera de los límites se oculte */
+    display: flex; /* Para centrar contenido si es necesario */
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%; /* La imagen se escala al ancho del contenedor */
+    height: 100%; /* La imagen se escala al alto del contenedor */
+    object-fit: contain; /* Ajusta la imagen para llenar el contenedor, recortando si es necesario */
+}
+
+p-tag {
+    margin-left: 5px;  /* Espacio a la izquierda */
+    margin-right: 5px; /* Espacio a la derecha */
+}
+.p-card-header-content {
+    display: flex;
+    flex-direction: column; /* Alinea el título y los tags verticalmente */
+    justify-content: space-between; /* Distribuye espacio entre el título y los tags */
+    height: 6em; /* Fija la altura total del contenedor */
+    overflow: hidden; /* Asegura que el contenido adicional no exceda el contenedor */
+}
+
+.p-card-header-content .tags-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los tags se ajusten en filas */
+    gap: 5px; /* Espacio entre los tags */
+}
+
+.text-container {
+    display: flex; /* Permite centrar elementos dentro del contenedor */
+    justify-content: center; /* Centra horizontalmente el texto */
+    align-items: center; /* Centra verticalmente el texto */
+    width: 100%; /* Ajusta el contenedor al ancho de la carta */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    padding: 1em; /* Añade un poco de espacio alrededor del texto */
+    box-sizing: border-box; /* Asegura que el padding no desborde el contenedor */
+    font-size: 1vw; /* Escala el tamaño del texto dinámicamente según el ancho de la ventana */
+    height: 10em; /* Fija una altura uniforme para el contenedor del texto */
+    overflow: hidden; /* Evita desbordamientos si el texto es demasiado largo */
+    text-overflow: ellipsis;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al principio y final */
+    align-items: center; /* Alinea los elementos verticalmente */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+
+p-button {
+    width: 50%; /* Asegura que el botón ocupe todo el espacio disponible */
+}
+
+
+
