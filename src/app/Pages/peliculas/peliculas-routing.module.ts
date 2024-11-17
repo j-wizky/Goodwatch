@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaPeliculasComponent } from './components/lista-peliculas/lista-peliculas.component';
+import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "",
     component: ListaPeliculasComponent,
+  },
+  {
+    path: "detalle",
+    component: DetallePeliculaComponent,
   },
   { path: "**", redirectTo: "/" }
 ];

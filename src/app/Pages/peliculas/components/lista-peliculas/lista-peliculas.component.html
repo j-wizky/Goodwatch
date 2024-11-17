@@ -28,7 +28,9 @@
 
                     <ng-template pTemplate="footer">
                         <div class="footer-container">
-                            <p-button label="Detalle" class="w-full" styleClass="button" />
+                            <p-button icon="pi pi-search" class="w-full" styleClass="button" (click)="verDetalle(pelicula.id)" />
+                            <p-button icon="pi pi-heart" class="w-full" styleClass="button" />
+                            <p-button icon="pi pi-bookmark" class="w-full" styleClass="button" />
                             <p-knob [ngModel]="redondearValoracion(pelicula.vote_average)" [max]="10" size="60"/>
                         </div>
                     </ng-template>

@@ -29,9 +29,6 @@ export class SingupComponent implements OnInit{
   }
   
   ngOnInit(): void {
-    console.log("init")
-    
-
     this.emailControl = this.form.get('email')!;
     this.usernameControl = this.form.get('username')!;
     this.passwordControl = this.form.get('password')!;
@@ -56,6 +53,10 @@ export class SingupComponent implements OnInit{
     this.authService.register(rawForm.email, rawForm.username, rawForm.password).subscribe(() => {
       this.router.navigate(['/home'])
     });
+  }
+
+  login(){
+    this.router.navigate(['/login'])
   }
 
 

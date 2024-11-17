@@ -27,4 +27,11 @@ export class PeliculasService {
 
     return this.baseService.get(this.apiUrl, "genre/movie/list", params)
   }
+
+  getDetallePeliculaPorId(peliculaId: number): Observable<any> {
+    const params = new HttpParams()
+      .set('language', 'es-ES')
+
+    return this.baseService.get(this.apiUrl, `movie/${peliculaId}`, params);
+  }
 }

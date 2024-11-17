@@ -4,6 +4,7 @@ import { PeliculasService } from 'src/app/shared/services/peliculas.service';
 import { Pelicula } from 'src/app/shared/models/pelicula';
 import { Genero } from 'src/app/shared/models/generos';
 import { PageEvent } from 'src/app/shared/models/page-event';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-peliculas',
@@ -19,7 +20,11 @@ export class ListaPeliculasComponent implements OnInit{
   rows = 20;
   page = 1;
 
-  constructor(private peliculasService: PeliculasService) {
+  constructor(
+    private peliculasService: PeliculasService,
+    private router: Router
+  ) 
+  {
     this.getPeliculasPopulares(this.page);
     this.getAllGeneros();
   }
@@ -58,6 +63,10 @@ export class ListaPeliculasComponent implements OnInit{
 
   redondearValoracion(valoracion: number){
     return Math.round(valoracion * 10) / 10;
+  }
+
+  verDetalle(peliculaId: number){
+    this.router.navigate(['/peliculas/detalle'], {queryParams: { id: peliculaId } });
   }
 
 }
